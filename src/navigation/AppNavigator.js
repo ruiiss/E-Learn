@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Text } from 'react-native';
 
@@ -14,11 +14,10 @@ import ProgressScreen from '../screens/ProgressScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import colors from '../constants/colors';
 
-const RootStack = createNativeStackNavigator();
+const RootStack = createStackNavigator();
 const Tab = createBottomTabNavigator();
-const MatkulStack = createNativeStackNavigator();
+const MatkulStack = createStackNavigator();
 
-// Stack nested inside the "Matkul" tab: list -> detail, passes route params
 function MatkulStackNavigator() {
   return (
     <MatkulStack.Navigator screenOptions={{ headerStyle: { backgroundColor: colors.primary }, headerTintColor: colors.white }}>
